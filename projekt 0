@@ -1,6 +1,8 @@
 CREATE TABLE Oceny (
-ocena_id INT PRIMARY KEY,
-student_id INT,
-kurs_id INT,
-ocena DECIAML(3,1),
-FOREGIN KEY (student_id) REFERENCES 
+  ocena_id INT PRIMARY KEY,
+  student_id INT,
+  kurs_id INT,
+  ocena DECIAML(3,1),
+  FOREGIN KEY (student_id) REFERENCES Studenci(studen_id),
+  FOREGIN JEY (kurs_id) REFERENCES Kursy(kurs?_id)
+);
