@@ -3,7 +3,6 @@
 mając do dyspozycji 3 tabele: studenci, zapisy, kursy
 
 /* Tworzenie tabeli "Studenci"*/
-
 CREATE TABLE Studenci (
     student_id INT PRIMARY KEY,
     imie VARCHAR(50),
@@ -13,7 +12,6 @@ CREATE TABLE Studenci (
 );
 
 /*Tworzenie tabeli "Kursy"*/
-
 CREATE TABLE Kursy (
     kurs_id INT PRIMARY KEY,
     nazwa VARCHAR(100),
@@ -24,7 +22,6 @@ CREATE TABLE Kursy (
 );
 
 /*Tworzenie tabeli "Zapisy"*/
-
 CREATE TABLE Zapisy (
     zapis_id INT PRIMARY KEY,
     student_id INT,
@@ -32,5 +29,19 @@ CREATE TABLE Zapisy (
     FOREIGN KEY (student_id) REFERENCES Studenci(student_id),
     FOREIGN KEY (kurs_id) REFERENCES Kursy(kurs_id)
 );
+
+/*Tworzenie tabeli "Oceny"*/
+CREATE TABLE Oceny (
+    ocena_id INT PRIMARY KEY,
+    student_id INT,
+    kurs_id INT,
+    ocena DECIMAL(3,1),
+    FOREIGN KEY (student_id) REFERENCES Studenci(student_id),
+    FOREIGN KEY (kurs_id) REFERENCES Kursy(kurs_id)
+);
+
+
+
+
 
 
