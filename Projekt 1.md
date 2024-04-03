@@ -8,10 +8,11 @@ CREATE TABLE Student (
     imie VARCHAR(50),
     nazwisko VARCHAR(50),
     email VARCHAR(100),
-    indeks VARCHAR(20) UNIQUE
+    nr_indeksu VARCHAR(20) UNIQUE
 );
 
-/*Tworzenie tabeli "Kursy"
+/*Tworzenie tabeli "Kursy"*/
+
 CREATE TABLE Kursy (
     kurs_id INT PRIMARY KEY,
     nazwa VARCHAR(100),
