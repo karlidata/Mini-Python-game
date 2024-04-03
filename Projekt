@@ -4,12 +4,12 @@ mając do dyspozycji 3 tabele: studenci, zapisy, kursy
 
 /* Tworzenie tabeli "Studenci"*/
 
-CREATE TABLE Student (
+CREATE TABLE Studenci (
     student_id INT PRIMARY KEY,
     imie VARCHAR(50),
     nazwisko VARCHAR(50),
     email VARCHAR(100),
-    nr_indeksu VARCHAR(20) UNIQUE
+    indeks VARCHAR(20) UNIQUE
 );
 
 /*Tworzenie tabeli "Kursy"*/
@@ -21,6 +21,16 @@ CREATE TABLE Kursy (
     sala VARCHAR(20),
     godzina_rozpoczecia TIME,
     godzina_zakonczenia TIME
+);
+
+/*Tworzenie tabeli "Zapisy"*/
+
+CREATE TABLE Zapisy (
+    zapis_id INT PRIMARY KEY,
+    student_id INT,
+    kurs_id INT,
+    FOREIGN KEY (student_id) REFERENCES Studenci(student_id),
+    FOREIGN KEY (kurs_id) REFERENCES Kursy(kurs_id)
 );
 
 
