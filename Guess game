@@ -1,0 +1,18 @@
+import random
+print ("Hi what's your name")
+name=input() 
+print("Nice to meet you" + name + "let's play a game")
+print("Guess the numer beetwen 1 and 20 less than 3 guesses")
+number = random.randint(1,20)
+guesses_no=0
+
+while(guesses_no < 3):
+    print ("take a guess")
+    guess=int(input())
+    guesses_no=guesses_no+1
+    
+    if guess < number:
+            print("Wrong, your lower than the number")
+    elif guess > number:
+            print("Wrong, your the higer than the number")
+print("Congratulation!You're the winner")
