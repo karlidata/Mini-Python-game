@@ -1,1 +1,1 @@
-Prosty projekt modelu zapisu studentów na wybrane kursy- baza danych.
+Proste projekty modelu baz danych.
