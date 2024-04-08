@@ -1,1 +1,58 @@
+CREATE DATABASE [myDB]
+USE[myDB]
+
+CREATE TABLE[Artists](
+[id] int PRIMARY KEY,
+[name] nvarchar (max),
+[date_of_birth] date,
+[title] nchar (10)
+)
+
+
+CREATE TABLE[Work] (
+[id] int PRIMARY KEY,
+[name] nvarchar(max),
+[description] nvarchar(max),
+[link] nvarchar (max),
+[artist_id] int FOREIGN KEY REFERENCES Artists(id)
+)
+
+
+CREATE TABLE[Reviewer] (
+[id] int PRIMARY KEY,
+[name] nvarchar(max),
+[date_of_birth] date,
+[title] nchar (10),
+)
+
+
+CREATE TABLE[Review] (
+[id] int PRIMARY KEY,
+[comments] nvarchar(max),
+[rating] int,
+[link] nvarchar (max),
+[reviewer_id] int FOREIGN KEY REFERENCES Reviewer(id),
+[work_id] int FOREIGN KEY REFERENCES Work(id)
+)
+
+
+INSERT INTO[Artists] VALUES (1, 'John Stephens', '1986-12-12','Guitarist')
+
+INSERT INTO[Artists] VALUES (2, 'Leonardo Green', '1996-07-04','Painter')
+
+INSERT INTO [Artists] VALUES (3,'Leonardo Richardson','1975-09-04','Painter')
+
+
+INSERT INTO [Reviewer] VALUES (1,'Marcus Black','1996-03-07','Critic')
+INSERT INTO [Reviewer] VALUES (2,'Henry Meenow','1989-06-09','Critic')
+INSERT INTO [Reviewer] VALUES (3,'Frank Wershoon','1974-01-10','Editor')
+
+
+INSERT INTO [Work] VALUES (1,'Guitar Solo','A Guitar solo in D minor','/*link*/', 1)
+INSERT INTO [Work] VALUES (2,'Fur Elise','Cover of Fu Elise by Beethoven','/*link*/',2)
+INSERT INTO [Work] VALUES (3,'My life','A painting that depicts my life','/*link*/',3)
+
+INSERT INTO [Review] VALUES (1,'Very Good',9,1,1)
+INSERT INTO [Review] VALUES (2,'Good',7,2,2)
+INSERT INTO [Review] VALUES (3,'Good',7,3,2)
 
