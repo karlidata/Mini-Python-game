@@ -1,3 +1,5 @@
+/*Projekt modelu bazy danych z wykorzystaniem Primary key i Foreign Key*/
+
 CREATE DATABASE [myDB]
 USE[myDB]
 
